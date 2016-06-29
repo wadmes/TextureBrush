@@ -1,0 +1,6 @@
+# git ignore SDK
+/SDK
+
+# git ignore generated code
+/Debug
+/Release

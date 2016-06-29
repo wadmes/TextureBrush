@@ -1,0 +1,3 @@
+# git ignore almost everything
+*.png
+!Example_2.png

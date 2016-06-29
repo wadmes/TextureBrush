@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E86976BB-B068-461A-BC0B-83E7A6A387C6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>TextureSynthesis</RootNamespace>
+    <ProjectName>CSCI5210-FinalProj-TextureBrush</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\SDK\Visual Leak Detector\include;..\SDK\opengl\include;..\SDK\glfw-3.2.bin.WIN32\include;..\SDK\glm\glm_0.9.6.3;..\SDK\boost_1_61_0;..\SDK\DevIL-SDK-x86-1.7.8\include;..\SDK\MeshGeodesics\gw_core;..\SDK\MeshGeodesics\gw_maths;..\SDK\MeshGeodesics\gw_geodesic</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\SDK\Visual Leak Detector\lib\Win32;..\SDK\opengl\lib;..\SDK\DevIL-SDK-x86-1.7.8\lib;..\SDK\glfw-3.2.bin.WIN32\lib-vc2013;..\SDK\MeshGeodesics\build\bin\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glu32.lib;opengl32.lib;glfw3dll.lib;MeshGeodesics.lib;DevIL.lib;ILU.lib;ILUT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\SDK\Visual Leak Detector\include;..\SDK\opengl\include;..\SDK\glfw-3.2.bin.WIN32\include;..\SDK\glm\glm_0.9.6.3;..\SDK\boost_1_61_0;..\SDK\DevIL-SDK-x86-1.7.8\include;..\SDK\MeshGeodesics\gw_core;..\SDK\MeshGeodesics\gw_maths;..\SDK\MeshGeodesics\gw_geodesic</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glew32.lib;glu32.lib;opengl32.lib;glfw3dll.lib;MeshGeodesics.lib;DevIL.lib;ILU.lib;ILUT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\SDK\Visual Leak Detector\lib\Win32;..\SDK\opengl\lib;..\SDK\DevIL-SDK-x86-1.7.8\lib;..\SDK\glfw-3.2.bin.WIN32\lib-vc2013;..\SDK\MeshGeodesics\build\bin\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="commonUtility.cpp" />
+    <ClCompile Include="renderer\brushGlobalRes.cpp" />
+    <ClCompile Include="renderer\frameBufferObject.cpp" />
+    <ClCompile Include="renderer\geodesicMesh.cpp" />
+    <ClCompile Include="renderer\paintPathes.cpp" />
+    <ClCompile Include="renderer\pixelBufferObject.cpp" />
+    <ClCompile Include="renderer\screenPassVBO.cpp" />
+    <ClCompile Include="renderer\screenRectangle.cpp" />
+    <ClCompile Include="renderer\textureKernelDefs.cpp" />
+    <ClCompile Include="renderer\triangleMesh.cpp" />
+    <ClCompile Include="renderer\camera.cpp" />
+    <ClCompile Include="renderer\cubeGeometry.cpp" />
+    <ClCompile Include="eventHandler\eventManager.cpp" />
+    <ClCompile Include="renderer\Geo2D.cpp" />
+    <ClCompile Include="renderer\glError.cpp" />
+    <ClCompile Include="renderer\image2D.cpp" />
+    <ClCompile Include="renderer\glTexture.cpp" />
+    <ClCompile Include="renderer\renderSystem.cpp" />
+    <ClCompile Include="renderer\renderSystemConfig.cpp" />
+    <ClCompile Include="renderer\renderUtilities.cpp" />
+    <ClCompile Include="renderer\shaderManager.cpp" />
+    <ClCompile Include="renderer\shaderProgram.cpp" />
+    <ClCompile Include="renderer\sphereGeometry.cpp" />
+    <ClCompile Include="renderer\vertexBufferObject.cpp" />
+    <ClCompile Include="renderer\viewer.cpp" />
+    <ClCompile Include="TextureBrush.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="commonUtility.h" />
+    <ClInclude Include="eventHandler\keyboardEvent.h" />
+    <ClInclude Include="eventHandler\mouseEvent.h" />
+    <ClInclude Include="preHeader.h" />
+    <ClInclude Include="renderer\brushGlobalRes.h" />
+    <ClInclude Include="renderer\frameBufferObject.h" />
+    <ClInclude Include="renderer\geodesicMesh.h" />
+    <ClInclude Include="renderer\paintPathes.h" />
+    <ClInclude Include="renderer\pixelBufferObject.h" />
+    <ClInclude Include="renderer\renderPass.h" />
+    <ClInclude Include="renderer\screenPassVBO.h" />
+    <ClInclude Include="renderer\screenRectangle.h" />
+    <ClInclude Include="renderer\textureKernelDefs.h" />
+    <ClInclude Include="renderer\triangleMesh.h" />
+    <ClInclude Include="renderer\camera.h" />
+    <ClInclude Include="renderer\cubeGeometry.h" />
+    <ClInclude Include="eventHandler\eventManager.h" />
+    <ClInclude Include="renderer\Geo2D.h" />
+    <ClInclude Include="renderer\glError.h" />
+    <ClInclude Include="renderer\image2D.h" />
+    <ClInclude Include="kernelDefs.h" />
+    <ClInclude Include="renderer\glTexture.h" />
+    <ClInclude Include="renderer\renderSystem.h" />
+    <ClInclude Include="renderer\renderSystemConfig.h" />
+    <ClInclude Include="renderer\renderUtilities.h" />
+    <ClInclude Include="renderer\sceneElementDefs.h" />
+    <ClInclude Include="renderer\shaderManager.h" />
+    <ClInclude Include="renderer\shaderProgram.h" />
+    <ClInclude Include="renderer\sphereGeometry.h" />
+    <ClInclude Include="renderer\vertexBufferObject.h" />
+    <ClInclude Include="renderer\viewer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="system.cfg" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

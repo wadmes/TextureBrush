@@ -1,0 +1,4 @@
+# git ignore almost everything
+*.off
+!Apple.off
+!head.off

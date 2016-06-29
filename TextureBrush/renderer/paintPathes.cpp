@@ -60,6 +60,24 @@ void CPaintPathes::addPointToPath(const ivec2 &newPos)
 		cout << "[" << newPos[0] << "," << newPos[1] << "]" << endl;
 		m_pathPointVec.push_back(newPos);
 	}
+	
+	
+	// Transform path vertices in pixel coordinates into world coordinates
+	GLdouble modelview[16];
+	glGetDoublev(GL_MODELVIEW_MATRIX, modelview);
+	GLdouble projection[16];
+	glGetDoublev(GL_PROJECTION_MATRIX, projection);
+	GLint viewport[4];
+	glGetIntegerv(GL_VIEWPORT, viewport);
+
+	float depth;
+	glReadPixels(newPos[0], newPos[1], 1, 1, GL_DEPTH_COMPONENT, GL_FLOAT, &depth);
+	cout << "Depth is " << depth << endl;
+
+	double objPos[3];
+	gluUnProject(newPos[0], newPos[1], depth, modelview, projection, viewport, &objPos[0], &objPos[1], &objPos[2]);
+
+	cout << objPos[0] << " " << objPos[1] << " " << objPos[2] << endl;
 }
 
 void CPaintPathes::endPath()

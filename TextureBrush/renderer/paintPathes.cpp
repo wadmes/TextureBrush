@@ -321,6 +321,7 @@ void CPaintPathes::assignLocalTexcoords()
 }
 
 /*
+//another low-level algrithm by Neway
 void AddPointFunc(int TriNum)
 {
 	if TriNum > pTriIndices[TriNum].length()
@@ -334,11 +335,15 @@ void AddPointFunc(int TriNum)
 	Find the point with the minimum distance between the point and the line draw by user in the set "CompareSet"..I don't know how to realize it..= = 
 		Let's assume the chosen point(minimum distance point) is  MinP.
 		chosenVerIdxSet.insert(MinP);// insert the chosen point
-		if (MinP == pTriIndices[TriNum + 1][0] || [1] || [2])
-			AddPointFunc(TriNum + 1);
-		else if (Minp == pTriIndices[TriNum + 2][0] || [1] || [2])
-			AddPointFunc(TriNum + 2);
-	return 0;
+	for (int i = pTriIndices[TriNum].length() - 1; i > TriNum; i--)
+	{
+		if (MinP == pTriIndices[curTriIdx][i][0] || [1] || [2])
+		{
+			AddPointFunc(i);
+			return 0;
+		}// version 2.0
+	}
+
 }
 
 int TriNum = 0;// in the first triangle, choose the minimum distance point .
@@ -350,4 +355,5 @@ else if (Minp == pTriIndices[TriNum + 2][0] || [1] || [2])
 AddPointFunc(TriNum + 2);
 else
 AddPointFunc(TriNum);
+
 */

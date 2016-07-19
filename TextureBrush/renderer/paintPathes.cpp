@@ -322,21 +322,27 @@ void CPaintPathes::assignLocalTexcoords()
 
 /*
 //another low-level algrithm by Neway
-float DistanceFromPointToPath(the point, the path)// not sure about the function, to be done by CanTui?
+float DistanceFromPointToPath(ivec3 *point, the path)// not sure about the function, to be done by CanTui?
 //assume the return value is a distance with type float
 
 void AddPointFunc(int TriNum)
 {
+        float MinD=99999;
+        ivec3 *MinP;
 	if TriNum > pTriIndices[TriNum].length()
 		return 0;
 	else
 		for (int i = 0; i < 3; i++)
 		{
 			if (chosenVerIdxSet.find(pTriIndices[curTriIdx][i]) == chosenVerIdxSet.end())//the point i is not be chosen 
-				CompareSet.insert(pTriIndices[curTriIdx][i]);// put the distance of point i into the compared set and then find the point with the minimum distance.
+			{
+			if(DistanceFromPointToPath(pTriIndices[curTriIdx][i],the path)<MinD)
+			{
+			MinD=DistanceFromPointToPath(pTriIndices[curTriIdx][i],the path);
+			MinP=pTriIndices[curTriIdx][i];
+			}
+			}
 		}
-	Find the point with the minimum distance between the point and the line draw by user in the set "CompareSet"..I don't know how to realize it..= = 
-		Let's assume the chosen point(minimum distance point) is  MinP.
 		chosenVerIdxSet.insert(MinP);// insert the chosen point
 	for (int i = pTriIndices[TriNum].length() - 1; i > TriNum; i--)
 	{
@@ -349,10 +355,9 @@ void AddPointFunc(int TriNum)
 
 }
 
-set<int> CompareSet;
-CompareSet.clear;
+
 int TriNum = 0;// in the first triangle, choose the minimum distance point .
-assume the chosen point(minimum distance point) is  MinP.
+ivec3 *MinP;
 chosenVerIdxSet.insert(MinP);// insert the chosen point
 for (int i = pTriIndices[TriNum].length() - 1; i > TriNum; i--)
 	{

@@ -322,7 +322,32 @@ void CPaintPathes::assignLocalTexcoords()
 
 /*
 //another low-level algrithm by Neway
-float DistanceFromPointToPath(ivec3 *point, the path)// not sure about the function, to be done by CanTui?
+float DistanceFromPointToPath(ivec3 *point, ivec2 m_pathPointVec)
+{
+  float MinD=99999;
+  for(int i=0;i<m_pathPointVec.size();i++)
+  {
+       	GLdouble modelview[16];
+	glGetDoublev(GL_MODELVIEW_MATRIX, modelview);
+	GLdouble projection[16];
+	glGetDoublev(GL_PROJECTION_MATRIX, projection);
+	GLint viewport[4];
+	glGetIntegerv(GL_VIEWPORT, viewport);
+
+	float depth;
+	glReadPixels(m_pathPointVec[i][0], m_pathPointVec[i][1], 1, 1, GL_DEPTH_COMPONENT, GL_FLOAT, &depth);
+	cout << "Depth is " << depth << endl;
+
+	float objPos[3];
+	gluUnProject(newPos[0], newPos[1], depth, modelview, projection, viewport, &objPos[0], &objPos[1], &objPos[2]);
+
+	cout << objPos[0] << " " << objPos[1] << " " << objPos[2] << endl;
+	float Distance= sqrt((pow(point[0]-objPos[0],2)+(pow(point[1]-objPos[1],2)+(pow(point[2]-objPos[2],2));
+	if(Distance<MinD)
+	MinD=Distance;
+  }
+return MinD;
+}
 //assume the return value is a distance with type float
 
 void AddPointFunc(int TriNum)
